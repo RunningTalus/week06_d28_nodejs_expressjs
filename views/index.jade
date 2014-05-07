@@ -1,2 +1,10 @@
-h1 Hello Boulder
-h2 Welcome to Boulder.  The city that wants to be chill, like back in the day- but the people are just too hardcore!
+extends layout
+
+block content
+	h1 Hello #{currentUser.name}.
+	h2 Welcome to Boulder #{currentUser.name}!  
+	h3 My favorite hike is: #{currentUser.favoriteHike}
+	h4 Below are some other popular hikes with great views:
+	ul
+		for hike in boulderHikes
+			li= hike
